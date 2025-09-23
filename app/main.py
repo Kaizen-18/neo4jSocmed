@@ -12,6 +12,11 @@ load_dotenv()
 
 app = FastAPI(title="FastAPI + Neo4j Social API")
 
+@app.get("/")
+async def root():
+    return {"message": "Welcome to Neo4j Social Media API 🚀", "docs": "/docs"}
+
+
 # startup/shutdown
 @app.on_event("startup")
 async def startup():
